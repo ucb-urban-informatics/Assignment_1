@@ -67,7 +67,7 @@ You will need to hang on to the script to use as a module import into later part
     - 1 row per station.
 - HINT: you'll want to loop through each of the missing stations as well.
 
-#### ***B.5 [BONUS]. Sort the list of stations by number of rides [2 points]**
+#### **B.5 [BONUS]. Sort the list of stations by number of rides [2 points]**
 - Create another csv, called `station_ride_counts_202501_sorted.csv`, identical to the one you created in **B.4** but sorted with the same rides
 
 
@@ -97,7 +97,7 @@ rides_histogram(input_path = 'path/to/your/file.csv', save_path = 'path/where/yo
 - To generate a report for a given district, use the `generate_pdf_report` function (also included in the `report_functions.py` module). This function will take in the `file_path` from your generated pngs and additional data
 - You'll need to loop through each file and save the files in your reports folder.
 
-#### ***C.4. BONUS - Add a log to keep track of the function's progress [2 points]**
+#### **C.4. BONUS - Add a log to keep track of the function's progress [2 points]**
 - As your function loops through all the stations, print out progress by 10s. e.g. if there were 333 districts, your script would print out to the terminal:
 ```
   0/333
