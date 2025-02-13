@@ -120,7 +120,7 @@ Your old coworker also included files from December in their dataset. However, t
 
 Again, you **cannot** use external libraries except `os` and the `report_functions`.
 
-#### ***D.2 [BONUS]. Return the number of distinct destination for each December station [5 points]**
+#### **D.2 [BONUS]. Return the number of distinct destination for each December station [5 points]**
 - *NOTE*: This is hard without using a package like numpy or pandas. That is intentional.
 - *HINT*: You'll probably want to write this as a function. Think about how you'd store and access data.
 - Return this in a csv, named `station_ride_dests_202412.csv` with the format:
