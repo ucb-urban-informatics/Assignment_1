@@ -11,7 +11,7 @@ Thus, like with any real-world situation, your data is far from perfect. You wil
 For many of these tasks, there are additional packages available that can help with these tasks (in particular, `pandas` and `numpy`). For this project we ask that you **do not** use them, or any additional packages besides `os` and the module provided. If you solve it using a disallowed library, you will not receive points for that section.
 
 ## **Dataset Description**
-A directory named **`January Files/`** contains a number of documents:
+A directory named **`January_files/`** contains a number of documents:
 - **`stations.txt`**: this file contains a list of `station_ids` separated by `|`. They are NOT necessarily distinct.
 - **a number of `.csv` files**: These are in the format these contain one line for each ride that *began* at that station.
 - **a number of `.png` files**: these contain visualizations of *some* of the data files received. Your collegue has made these by hand before you joined the project.
@@ -116,7 +116,7 @@ Your old coworker also included files from December in their dataset. However, t
 
 #### **D.1 [BONUS) - Prep the data for December - Convert to CSVs [2 points]**
 - Create a new `csvs_202412` folder in your directory.
-- For each csv in the `December Data` folder, create a corresponding csv for each file.
+- For each csv in the `December_files` folder, create a corresponding csv for each file.
 
 Again, you **cannot** use external libraries except `os` and the `report_functions`.
 
@@ -136,7 +136,7 @@ Again, you **cannot** use external libraries except `os` and the `report_functio
     2. `station_ride_dests_202412.csv` [BONUS]
 3. folders:
     1. `plots`
-    2. `January Files`
+    2. `January_files`
     3. `pdf_reports`
     4. `csvs_202412` [BONUS]
 ---
