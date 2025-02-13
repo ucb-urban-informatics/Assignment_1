@@ -111,10 +111,10 @@ DONE!
 
 *NOTE*: Careful of the formatting of the numbers. Note that all of them are right-aligned.
 
-### ***Part D [BONUS]. Bonus Exercises for December 6/0
+### **Part D [BONUS]. Bonus Exercises for December 6/0**
 Your old coworker also included files from December in their dataset. However, these are in an older file format. Look at the files and determine what the format is. Read through them and see if you can convert them to the same format as the January csvs. Then we'll do some additional tests on them
 
-#### ***D.1 [BONUS) - Prep the data for December - Convert to CSVs [2 points]**
+#### **D.1 [BONUS) - Prep the data for December - Convert to CSVs [2 points]**
 - Create a new `csvs_202412` folder in your directory.
 - For each csv in the `December Data` folder, create a corresponding csv for each file.
 
