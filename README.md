@@ -11,7 +11,7 @@ Thus, like with any real-world situation, your data is far from perfect. You wil
 For many of these tasks, there are additional packages available that can help with these tasks (in particular, `pandas` and `numpy`). For this project we ask that you **do not** use them, or any additional packages besides `os` and the module provided. If you solve it using a disallowed library, you will not receive points for that section.
 
 ## **Dataset Description**
-- **`stations.txt`**: this file contains a list of `station_ids` separated by `|`. They are NOT necessarily distinct.
+- **`stations.txt`**: this file contains a list of `station_ids` separated by `,`. They are NOT necessarily distinct.
 A directory named **`January_files/`** contains a number of documents:
 - **a number of `.csv` files**: These are in the format these contain one line for each ride that *began* at that station.
 - **a number of `.png` files**: these contain visualizations of *some* of the data files received. Your collegue has made these by hand before you joined the project.
