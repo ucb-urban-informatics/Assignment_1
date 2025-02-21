@@ -6,20 +6,21 @@
 ## **Objective**
 In this assignment, you will assume the role of an urban data analyst. Your task is to analyze data from NYC's CitiBike Bikeshare network. You have received a large amount of data from the city, including a number of `.csv`, `.txt` and `.pdf` files, among others, and you will need to transform it to create a report for each station to analyze ridership. 
 
-To make things more complicated, you are not the first person to work on this project. You are taking over the task from a coworker, who recently left the office due to accepting a buyout from a tech billionaire. Before they leave, they send you their data and the progress they have made analyzing a few stations. They also include a module they have inherited from another previous coworker, which they you will use to transform the data - it is now up to you to clean it up and finish the project.
+To make things more complicated, you are not the first person to work on this project. You are taking over the task from a coworker, who recently left the office due to accepting a buyout from a tech billionaire. Before they leave, they send you their data and the progress they have made analyzing a few stations. 
+They also include a module inherited from a previous coworker, which you will use to process and standardize the data before analysis. This module may help with tasks such as formatting station IDs, handling missing values, or ensuring consistency across files; it is now up to you to clean it up and finish the project.
 
 Thus, like with any real-world situation, your data is far from perfect. You will need to first figure out what data you have, and what format it is in, and then decide how to proceed.
 
 ## **Note on Allowed Packages**
-For many of these tasks, there are additional packages available that can help (in particular, `pandas` and `numpy`). For this project we ask that you **do not** use them, or any additional packages besides `os`, `csv`, `shutil` and the module provided. If you solve it using a disallowed library, you will not receive points for that section. 
+For many of these tasks, there are additional packages available that can help (in particular, `pandas` and `numpy`). For this project we ask that you **do not** use them, or any additional packages besides `os`, `csv`, `shutil` and the module provided (`report_functions`). If you solve it using a disallowed library, you will not receive points for that section. 
 
 *Note*: The `csv` module is not necessary for the csv portions but you can use the example from class that utilizes it if you like.
 
 ## **Dataset Description**
 - **`stations.txt`**: this file contains a list of `station_ids` separated by `,`s. They are **NOT** necessarily distinct.
 - A directory named **`January Files/`** contains a number of documents:
-    - **a number of `.csv` files**: These are in the format these contain one line for each ride that *began* at that station.
-    - **a number of `.png` files**: these contain visualizations of *some* of the data files received. Your collegue has made these by hand before you joined the project.
+    - **a number of `.csv` files**: These contain one line for each ride that *began* at that station.
+    - **a number of `.png` files**: these contain visualizations of *some* of the data files received. Your colleague has made these by hand before you joined the project.
     - **a number of `.pdf` files**: these contain reports which your colleague has completed. You might want to recreate them for consistency.
 
 ---
@@ -29,7 +30,7 @@ For many of these tasks, there are additional packages available that can help (
 In this section, you will take stock of all the data you've received and make a report of what you have and what is missing. This is an important first step to **any project** to ensure you are not missing any data, and that all of it is in the correct format.
 
 #### **A.1. Load and Explore the Dataset** [2 points]
-- Read in the `stations.txt` file, and split it by `,`s. 
+- Read in the `stations.txt` file and split it using commas (,). 
 - If you need an example of how to read in a file with delimiters, check out the Exercise from **Lecture 3.2**.
 - Calculate the number of distinct stations and print it out. **HINT**: Remember, your coworker was not necessarily careful about avoiding duplicates.
 
@@ -40,17 +41,17 @@ In this section, you will take stock of all the data you've received and make a 
 - Create a new file named `file_report_counts.csv`
 - Write your findings to it, creating a table with:
     - **2 columns**: [`type`, `number`].
-    - **4 rows**: one for the `'stations'` as well as one each for `'csv'`, `'png'`, `'pdf'.
+    - **4 rows**: one for the `'stations'` (count of distinct stations) as well as one each for `'csv'`, `'png'`, `'pdf'`.
 
 - *HINT*: Remember, we know two ways to write a file: 
-    - Check the exercises from **Lecture 3.2** on the website (transit modes).
+    - Check the in-class exercises from **Lecture 3.2** on the website (transit modes).
     - Or using the `csv` module used in the lab from **Lecture 4.1**.
 - This file should be formatted as a valid `.csv` file with correctly named **column-headers**.
 
 ### **Part B. Data Cleaning [22/20 Total Points]**
 The next, essential part of any data analysis task is cleaning the data. 
 
-Your output of this step will be three functions:
+Your output of this step will be two functions:
 
     - `identify_missing`
     - `get_num_ride`
@@ -69,8 +70,8 @@ Your output of this step will be three functions:
 - `share` should be the proportion of total stations that are missing. e.g. `[number of csvs missing]/[number_of_stations]` (for 'number_of_stations' it should be `0`).
 
 #### ***B.2.5 Copy your Files to a New Folder [OPTIONAL]**
-- In order to avoid overwriting your files, you'll copy the CSVs to a new directory.
-- You can use the code below to create a new `2025-01/`, and move all of the 'csvs' to it.
+- To avoid overwriting your files, you'll copy the CSVs to a new directory.
+- You can use the code below to create a new `csvs_202501/`, and copy all of the 'csvs' to it.
 
 ```
 import shutil
@@ -81,8 +82,8 @@ for file in os.listdir('January Files/'):
 ```
 
 #### **B.3. Generate the Missing `.csv` Files [5 points]**
-- For each of the csv files that is missing, create an **empty** csv file, in your new `2025-01` directory, with the correct naming convention (`trips_[station_id]_202501.csv`).
-- For each file, you'll need to not just create the file, but also **add a header with the column-names** that the other files use.
+- For each of the csv files that is missing, create an **empty** csv file, in your new `csvs_202501` directory, with the correct naming convention (`trips_[station_id]_202501.csv`).
+- For each file, you'll need to not just create the file, but also **add a header with the column-names** that the other files use. (Use an existing .csv file to infer the correct column names.)
     - This will allow later functions to read in the file as if it is a similar table but just with no rows.
 
 #### **B.4. Report number of rides [5 points]**
@@ -97,7 +98,8 @@ for file in os.listdir('January Files/'):
 - Create another csv, called `station_ride_counts_202501_sorted.csv`, identical to the one you created in **B.4** but sorted by the number of rides.
 
 ### **Part C. Visualize and Report [22/20 Total Points]**
-In this part, you will use the data you've now ingested, investigated and cleaned to generate some insights and visualizations. We have provided a visualization function as part of a separate module.
+In this part, you will use the data you've now ingested, investigated and cleaned to generate some insights and visualizations.
+We have provided a visualization function as part of a separate module.
 
 #### **C.1. Import the visualization function [2 points]**
 ```
@@ -117,13 +119,13 @@ It takes in an `input_path` pointing to a csv of the format in `January Files/`.
 
 *HINT*: Example of how to use the provided visualization.
 ```
-rides_histogram(input_path = 'path/to/your/file.csv', save_path = 'path/where/you/want/to/save.csv')
+rides_histogram(input_path = 'path/to/your/file.csv', save_path = 'path/where/you/want/to/save.png')
 ```
 
 #### **C.3. Write a function to generate reports using the provided function [10 points]**
 - Create a `pdf_reports` folder.
 - Write a function, `generate_reports`, which loops through each station and generates a pdf for each one.
-- To generate a report for a given district, use the `generate_pdf_report` function (also included in the `report_functions.py` module). This function will take in the `file_path` from your generated pngs and additional data.
+- To generate a report for a given station, use the `generate_pdf_report` function (also included in the `report_functions.py` module). This function will take in the `file_path` from your generated pngs and additional data.
 - You'll need to loop through each file and save the files in your reports folder.
 
 #### ***C.4 [BONUS]. - Add a log to keep track of the function's progress [2 points]**
@@ -143,7 +145,7 @@ DONE!
 ### ***Part D [BONUS]. Bonus Exercises for December [7/0 Total Points]**
 Your old coworker also included files from December in their dataset. However, these are in an older file format. Look at the files and determine what the format is. Read through them and see if you can convert them to the same format as the January csvs. You'll do that below and then you'll run some additional analysis on them.
 
-#### ***D.1 [BONUS) - Prep the data for December - Convert to CSVs [2 points]**
+#### ***D.1 [BONUS] - Prep the data for December - Convert to CSVs [2 points]**
 - Create a new `csvs_202412` folder in your directory.
 - For each csv in the `December Data/` folder, create a corresponding csv with the same name structure in `csvs_202412`.
 
