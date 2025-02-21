@@ -164,7 +164,7 @@ Again, you **cannot** use external libraries except `os`, `csv`, `shutil` and th
 2. Report csvs: 
     1. `station_ride_counts_202501.csv`
     2. `station_ride_counts_202501_sorted.csv` **[BONUS]**
-    2. `station_ride_dests_202412.csv` **[BONUS]**
+    3. `station_ride_dests_202412.csv` **[BONUS]**
 3. folders:
     1. `plots`
     2. `csvs_202501` (alternatively if you kept them all in `January Files`, that is ok!)
